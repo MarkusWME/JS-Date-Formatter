@@ -1,0 +1,16 @@
+{
+  "name": "JS-Date-Formatter",
+  "version": "0.0.1",
+  "description": "Date formatter script tests",
+  "author": "MarkusWME <markuswme@pcgamingfreaks.at>",
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarkusWME/JS-Date-Formatter.git"
+  },
+  "dependencies": {
+    "hapi": "^13.3.0",
+    "inert": "^3.2.0",
+    "nodemon": "^1.9.1"
+  }
+}
