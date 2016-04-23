@@ -5,7 +5,7 @@
   "author": "MarkusWME <markuswme@pcgamingfreaks.at>",
   "license": "GPL-2.0",
   "scripts": {
-    "test": "istanbul cover test.js",
+    "test": "istanbul cover ./test/test.js",
     "open-coverage": "open ./coverage/lcov-report/index.html",
     "start": "./node_modules/.bin/nodemon static-server.js"
   },
