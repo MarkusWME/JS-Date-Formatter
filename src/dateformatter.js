@@ -3,36 +3,36 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 function DateFormatter() {
-    self.localeSettings = null;
-    self.currentDate = null;
+    var _localeSettings = null;
+    var _currentDate = null;
 
     DateFormatter.prototype.setLocaleSettings = function(localeSettings) {
         if (typeof localeSettings === 'object') {
-            self.localeSettings = localeSettings;
+            _localeSettings = localeSettings;
         } else if (typeof localeSettings === 'string') {
-            self.localeSettings = JSON.parse(localeSettings);
+            _localeSettings = JSON.parse(localeSettings);
         } else {
-            self.localeSettings = null;
+            _localeSettings = null;
             throw new TypeError("The data type of the given settings variable is not a valid type");
         }
     };
 
     DateFormatter.prototype.getLocaleSettings = function() {
-        return self.localeSettings;
+        return _localeSettings;
     };
 
     DateFormatter.prototype.getLocaleString = function() {
-        if (self.localeSettings === null) {
+        if (_localeSettings === null) {
             return null;
         }
-        return JSON.stringify(self.localeSettings);
+        return JSON.stringify(_localeSettings);
     };
 
     DateFormatter.prototype.getSetting = function(category, setting) {
-        if (self.localeSettings === null || self.localeSettings[category] === undefined || self.localeSettings[category][setting] === undefined) {
+        if (_localeSettings === null || _localeSettings[category] === undefined || _localeSettings[category][setting] === undefined) {
             return '';
         }
-        return self.localeSettings[category][setting];
+        return _localeSettings[category][setting];
     };
 
     DateFormatter.prototype.convertToDate = function(timestamp) {
@@ -45,14 +45,14 @@ function DateFormatter() {
     };
 
     DateFormatter.prototype.setDate = function(timestamp) {
-        self.currentDate = this.convertToDate(timestamp);
+        _currentDate = this.convertToDate(timestamp);
     };
 
     DateFormatter.prototype.getDate = function(timestamp) {
         if (timestamp !== undefined) {
             this.setDate(timestamp);
         }
-        return self.currentDate;
+        return _currentDate;
     };
 
     DateFormatter.prototype.getDay = function(timestamp) {
