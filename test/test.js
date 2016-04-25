@@ -22,7 +22,7 @@ var locales = {
 var timestamp = 1461457983060;
 var timestampObject = new Date(timestamp);
 var dayISO = 7;
-var dayCount = 114;
+var dayCount = 115;
 var daysOfMonth = 30;
 var week = 16;
 var yearISO = 2016;
@@ -125,7 +125,7 @@ QUnit.test('Test format character F (name of the month)', function(assert) {
 
 QUnit.test('Test format character m (month, 01-12)', function(assert) {
     var formatter = new DateFormatter();
-    assert.equal(formatter.format('m', timestampObject), timestampObject.getMonth() < 10 ? '0' + timestampObject.getMonth() : timestampObject.getMonth());
+    assert.equal(formatter.format('m', timestampObject), timestampObject.getMonth() < 9 ? '0' + (timestampObject.getMonth() + 1) : (timestampObject.getMonth() + 1));
 });
 
 QUnit.test('Test format character M (short name of the month)', function(assert) {
@@ -136,7 +136,7 @@ QUnit.test('Test format character M (short name of the month)', function(assert)
 
 QUnit.test('Test format character n (month, 1-12)', function(assert) {
     var formatter = new DateFormatter();
-    assert.equal(formatter.format('n', timestampObject), timestampObject.getMonth());
+    assert.equal(formatter.format('n', timestampObject), timestampObject.getMonth() + 1);
 });
 
 QUnit.test('Test format character t (number of days of the month)', function(assert) {
@@ -232,9 +232,8 @@ QUnit.test('Test format character I (daylight saving time)', function(assert) {
 QUnit.test('Test format character O (difference to GMT, +0000)', function(assert) {
     var formatter = new DateFormatter();
     var formatted = formatter.format('O', timestampObject);
-    assert.expect(2);
     assert.notEqual(formatted, 'undefined');
-    assert.equal(formatted.length === 5, true);
+    assert.equal(formatted.length, 5);
 });
 
 QUnit.test('Test format character P (difference to GMT, +00:00)', function(assert) {
@@ -242,7 +241,7 @@ QUnit.test('Test format character P (difference to GMT, +00:00)', function(asser
     var formatted = formatter.format('P', timestampObject);
     assert.expect(2);
     assert.notEqual(formatted, 'undefined');
-    assert.equal(formatted.length === 6, true);
+    assert.equal(formatted.length, 6);
 });
 
 QUnit.test('Test format character T (abbreviation of the timezone)', function(assert) {
@@ -260,46 +259,88 @@ QUnit.test('Test format character Z (timezone offset)', function(assert) {
 
 QUnit.test('Test format character c (ISO 8601 representation of the date)', function(assert) {
     var formatter = new DateFormatter();
-    assert.equal(formatter.format('c', timestampObject).indexOf(timestampObject.getYear()) === 0, true);
+    assert.equal(formatter.format('c', timestampObject).indexOf(timestampObject.getFullYear()), 0);
 });
 
 QUnit.test('Test format character r (RFC 2822 representation of the date)', function(assert) {
     var formatter = new DateFormatter();
+    formatter.setLocaleSettings(locales);
     assert.equal(formatter.format('r', timestampObject).indexOf(monthShortString) > 0, true);
 });
 
 QUnit.test('Test format character U (unix time)', function(assert) {
     var formatter = new DateFormatter();
-    assert.equal(formatter.format('U', timestampObject), timestamp);
+    assert.equal(formatter.format('U', timestampObject), Math.floor(timestamp / 1000));
 });
 
 QUnit.test('Test custom date format with given timestamp', function(assert) {
     var formatter = new DateFormatter();
     formatter.setLocaleSettings(locales);
-    assert.equal(formatter.format('D j. M Y, H:i', timestampObject), dayShortString + ' ' + timestampObject.getDate() + '. ' + monthShortString + ' ' + timestampObject.getYear() + ', ' + (timestampObject.getHours() < 10 ? '0' + timestampObject.getHours() : timestampObject.getHours()) + ':' + (timestampObject.getMinutes() < 10 ? '0' + timestampObject.getMinutes() : timestampObject.getMinutes()));
+    assert.equal(formatter.format('D j. M Y, H:i', timestampObject), dayShortString + ' ' + timestampObject.getDate() + '. ' + monthShortString + ' ' + timestampObject.getFullYear() + ', ' + (timestampObject.getHours() < 10 ? '0' + timestampObject.getHours() : timestampObject.getHours()) + ':' + (timestampObject.getMinutes() < 10 ? '0' + timestampObject.getMinutes() : timestampObject.getMinutes()));
 });
 
 QUnit.test('Test custom date format with given timestamp without locales', function(assert) {
     var formatter = new DateFormatter();
-    assert.equal(formatter.format('D j. M Y, H:i', timestampObject), ' ' + timestampObject.getDate() + '.  ' + timestampObject.getYear() + ', ' + (timestampObject.getHours() < 10 ? '0' + timestampObject.getHours() : timestampObject.getHours()) + ':' + (timestampObject.getMinutes() < 10 ? '0' + timestampObject.getMinutes() : timestampObject.getMinutes()));
+    assert.equal(formatter.format('D j. M Y, H:i', timestampObject), ' ' + timestampObject.getDate() + '.  ' + timestampObject.getFullYear() + ', ' + (timestampObject.getHours() < 10 ? '0' + timestampObject.getHours() : timestampObject.getHours()) + ':' + (timestampObject.getMinutes() < 10 ? '0' + timestampObject.getMinutes() : timestampObject.getMinutes()));
 });
 
 QUnit.test('Test another custom date format with another given timestamp', function(assert) {
     var formatter = new DateFormatter();
     formatter.setLocaleSettings(locales);
     var testDate = new Date(2015, 2, 23, 16, 45, 22, 672);
-    assert.equal(formatter.format('j.n.Y G:i (l A)', testDate), testDate.getDate() + '.' + testDate.getMonth() + '.' + testDate.getYear() + ' ' + testDate.getHours() + (testDate.getMinutes() < 10 ? '0' + testDate.getMinutes() : testDate.getMinutes()) + ' (' + locales.days[testDate.getDay() - 1 < 0 ? 6 : testDate.getDay() - 1] + ') ' + ((testDate.getHours() < 12 || (testDate.getHours() === 12 && testDate.getMinutes() === 0 && testDate.getSeconds() === 0)) ? 'AM' : 'PM'));
+    assert.equal(formatter.format('j.n.Y G:i (l A)', testDate), testDate.getDate() + '.' + (testDate.getMonth() + 1) + '.' + testDate.getFullYear() + ' ' + testDate.getHours() + ':' + (testDate.getMinutes() < 10 ? '0' + testDate.getMinutes() : testDate.getMinutes()) + ' (' + locales.days[testDate.getDay() - 1 < 0 ? 6 : testDate.getDay() - 1] + ' ' + ((testDate.getHours() < 12 || (testDate.getHours() === 12 && testDate.getMinutes() === 0 && testDate.getSeconds() === 0)) ? 'AM' : 'PM') + ')');
 });
 
 QUnit.test('Test custom date format with current time', function(assert) {
     var formatter = new DateFormatter();
     var testtime = new Date();
-    assert.equal(formatter.format('D j. M Y, H:i').indexOf(testtime.getYear()) > 0, true);
+    assert.equal(formatter.format('D j. M Y, H:i').indexOf(testtime.getFullYear()) > 0, true);
 });
 
 QUnit.test('Test function parseFormat with invalid data', function(assert) {
     var formatter = new DateFormatter();
-    assert.equal(formatter.parseFormat('Test', timestampObject), timestamp);
+    assert.equal(formatter.parseFormat('Test', timestampObject), 'Test');
+});
+
+QUnit.test('Test function getDaysFromMonth with valid data', function(assert) {
+    var formatter = new DateFormatter();
+    assert.equal(formatter.getDaysFromMonth(1), 31);
+});
+
+QUnit.test('Test function getDaysFromMonth with valid leap year data', function(assert) {
+    var formatter = new DateFormatter();
+    assert.equal(formatter.getDaysFromMonth(2, true), 29);
+});
+
+QUnit.test('Test function getDaysFromMonth with invalid data', function(assert) {
+    var formatter = new DateFormatter();
+    assert.throws(function() {
+        formatter.getDaysFromMonth('getDaysFromMonth')
+    }, TypeError);
+});
+
+QUnit.test('Test function getDaysFromMonth with not number non leap year data', function(assert) {
+    var formatter = new DateFormatter();
+    assert.equal(formatter.getDaysFromMonth('2', false), 28);
+});
+
+QUnit.test('Test function getWeek with first of the year 2016 (must be week 53)', function(assert) {
+    var formatter = new DateFormatter();
+    assert.equal(formatter.getWeek(new Date(2016, 0, 1)), 53);
+});
+
+QUnit.test('Test function getWeek with a hole week and the day before and after', function(assert) {
+    var formatter = new DateFormatter();
+    assert.expect(9);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 20)), 51);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 21)), 52);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 22)), 52);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 23)), 52);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 24)), 52);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 25)), 52);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 26)), 52);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 27)), 52);
+    assert.equal(formatter.getWeek(new Date(2015, 11, 28)), 53);
 });
 
 if (typeof module !== 'undefined' && module.exports) {

@@ -80,7 +80,13 @@ function DateFormatter() {
 
     DateFormatter.prototype.getDayOfYear = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        var month = this.getMonthShort();
+        var leapYear = this.isLeapYear();
+        var days = 0;
+        for (var i = 1; i < month; i++) {
+            days += this.getDaysFromMonth(i, leapYear);
+        }
+        return days + this.getDayShort();
     };
 
     DateFormatter.prototype.getDayName = function(timestamp) {
@@ -95,12 +101,13 @@ function DateFormatter() {
 
     DateFormatter.prototype.getDayAppendix = function(timestamp) {
         this.getDate(timestamp);
-        return this.getSetting('dayAppendix', this.getDay());
+        return this.getSetting('dayAppendix', this.getDay() - 1);
     };
 
     DateFormatter.prototype.getWeek = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        var week = Math.ceil((this.getDayOfYear() + this.getYearISOOffset()) / 7);
+        return week > 0 ? week : 53;
     };
 
     DateFormatter.prototype.getMonth = function(timestamp) {
@@ -110,27 +117,57 @@ function DateFormatter() {
 
     DateFormatter.prototype.getMonthShort = function(timestamp) {
         timestamp = this.getDate(timestamp);
-        return timestamp.getMonth();
+        return timestamp.getMonth() + 1;
+    };
+
+    DateFormatter.prototype.getDaysFromMonth = function(month, leapYear) {
+        if (typeof month !== 'number') {
+            if (isNaN(month)) {
+                throw new TypeError('The given month has to be a number');
+            }
+            month = parseInt(month);
+        }
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return 31;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return 30;
+            case 2:
+                if (leapYear == true) {
+                    return 29;
+                }
+                return 28;
+        }
     };
 
     DateFormatter.prototype.getDaysOfMonth = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return this.getDaysFromMonth(this.getMonthShort(), this.isLeapYear());
     };
 
     DateFormatter.prototype.getMonthName = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return this.getSetting('months', this.getMonthShort() - 1);
     };
 
     DateFormatter.prototype.getMonthNameShort = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return this.getSetting('monthsShort', this.getMonthShort() - 1);
     };
 
     DateFormatter.prototype.isLeapYear = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        var year = this.getYear();
+        return (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) ? '1' : '0';
     };
 
     DateFormatter.prototype.getYear = function(timestamp) {
@@ -145,12 +182,35 @@ function DateFormatter() {
 
     DateFormatter.prototype.getYearISO = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        if ((this.getMonthShort() === 1 && this.getWeek() === 53) || (this.getMonthShort() === 12 && this.getWeek() === 1)) {
+            return this.getYear() - 1;
+        }
+        return this.getYear();
+    };
+
+    DateFormatter.prototype.getYearISOOffset = function(timestamp) {
+        this.getDate(timestamp);
+        switch (new Date(this.getYear(), 0, 1).getDay()) {
+            case 0:
+                return -1;
+            case 1:
+                return 0;
+            case 2:
+                return 1;
+            case 3:
+                return 2;
+            case 4:
+                return 3;
+            case 5:
+                return -3;
+            case 6:
+                return -2;
+        }
     };
 
     DateFormatter.prototype.getHours12 = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return (this.getHours12Short() < 10 ? '0' : '') + this.getHours12Short();
     };
 
     DateFormatter.prototype.getHours24 = function(timestamp) {
@@ -160,7 +220,7 @@ function DateFormatter() {
 
     DateFormatter.prototype.getHours12Short = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return this.getHours24Short() - (this.getHours24Short() > 12 ? 12 : 0);
     };
 
     DateFormatter.prototype.getHours24Short = function(timestamp) {
@@ -208,7 +268,7 @@ function DateFormatter() {
 
     DateFormatter.prototype.getSwatchInternetTime = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return Math.round((((this.getHours24Short() * 60) + this.getMinutesShort() * 60) + this.getSecondsShort()) / 86.4);
     };
 
     DateFormatter.prototype.isDaylightSavingTime = function(timestamp) {
@@ -228,12 +288,21 @@ function DateFormatter() {
 
     DateFormatter.prototype.getGMT = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        var offset = this.getTimezoneOffset();
+        var negative = false;
+        if (offset < 0) {
+            negative = true;
+            offset *= -1;
+        }
+        var hours = offset / 60;
+        var minutes = offset % 60;
+        return (negative ? '+' : '-') + (hours < 10 ? '0' : '') + hours + (minutes < 10 ? '0' : minutes) + minutes;
     };
 
     DateFormatter.prototype.getGMTSeparated = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        var GMT = this.getGMT().toString();
+        return GMT.substr(0, 3) + ':' + GMT.substr(3);
     };
 
     DateFormatter.prototype.getTimezoneOffset = function(timestamp) {
@@ -243,17 +312,17 @@ function DateFormatter() {
 
     DateFormatter.prototype.getDateISO = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return this.format('Y-m-d\\TH:i:sP');
     };
 
     DateFormatter.prototype.getDateRFC = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return this.format('D, d M Y H:i:s O');
     };
 
     DateFormatter.prototype.getUnixTimestamp = function(timestamp) {
-        this.getDate(timestamp);
-        /// TODO: implement
+        timestamp = this.getDate(timestamp);
+        return Math.floor(timestamp.getTime() / 1000);
     };
 
     DateFormatter.prototype.parseFormat = function(formatCharacter, timestamp) {
@@ -347,7 +416,11 @@ function DateFormatter() {
         this.setDate(timestamp);
         var formatted = '';
         for (var i = 0; i < format.length; i++) {
-            formatted += this.parseFormat(format[i]);
+            if (format[i] === '\\') {
+                formatted += format[++i];
+            } else {
+                formatted += this.parseFormat(format[i]);
+            }
         }
         return formatted;
     };
