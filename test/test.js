@@ -2,6 +2,7 @@ if (typeof module !== 'undefined' && module.exports) {
     var QUnit = require('qunitjs');
     require('qunit-tap')(QUnit, console.log);
     var DateFormatter = require('../src/dateformatter.js');
+    var TimezoneManager = require('../src/timezonemanager.js');
 }
 
 var locales = {
@@ -341,6 +342,47 @@ QUnit.test('Test function getWeek with a hole week and the day before and after'
     assert.equal(formatter.getWeek(new Date(2015, 11, 26)), 52);
     assert.equal(formatter.getWeek(new Date(2015, 11, 27)), 52);
     assert.equal(formatter.getWeek(new Date(2015, 11, 28)), 53);
+});
+
+QUnit.test('Test function getYearISO', function(assert) {
+    var formatter = new DateFormatter();
+    assert.expect(10);
+    assert.equal(formatter.getYearISO(new Date(2016, 0, 1)), 2015);
+    assert.equal(formatter.getYearISO(new Date(2016, 0, 8)), 2016);
+    assert.equal(formatter.getYearISO(new Date(2016, 11, 31)), 2016);
+    assert.equal(formatter.getYearISO(new Date(2017, 0, 1)), 2017);
+    assert.equal(formatter.getYearISO(new Date(2018, 0, 22)), 2018);
+    assert.equal(formatter.getYearISO(new Date(2019, 0, 29)), 2019);
+    assert.equal(formatter.getYearISO(new Date(2020, 0, 15)), 2020);
+    assert.equal(formatter.getYearISO(new Date(2021, 11, 24)), 2021);
+    assert.equal(formatter.getYearISO(new Date(2022, 11, 10)), 2022);
+    assert.equal(formatter.getYearISO(new Date(2023, 11, 17)), 2023);
+});
+
+QUnit.test('Test DateFormatter without TimezoneManager', function(assert) {
+    var formatter = new DateFormatter();
+    formatter.setUseTimezoneManager(false);
+    assert.deepEqual(formatter.getTimezone().indexOf('UTC'), 0);
+});
+
+QUnit.test('Test function getTimezone of the TimezoneManager class', function(assert) {
+    var timezone = new TimezoneManager();
+    assert.expect(4);
+    assert.deepEqual(timezone.getTimezone(48.2, 16.18).name, 'Europe/Vienna');
+    assert.deepEqual(timezone.getTimezone(48.2, 16.9).name, 'Europe/Bratislava');
+    assert.deepEqual(timezone.getTimezone(-1, -2).name.indexOf('UTC'), 0);
+    timezone.setWorkingSpeedModifier(50);
+    assert.deepEqual(timezone.getTimezone(48.2, 16.65).name, 'Europe/Bratislava');
+});
+
+QUnit.test('Test function getCurrentTimezone of the TimezoneManager class', function(assert) {
+    var timezone = new TimezoneManager();
+    assert.deepEqual(timezone.getCurrentTimezone().indexOf('UTC') < 0, true);
+});
+
+QUnit.test('Test function getTimezoneByName of the TimezoneManager class', function(assert) {
+    var timezone = new TimezoneManager();
+    assert.deepEqual(timezone.getTimezoneByName('Europe/Berlin').name, 'Europe/Berlin');
 });
 
 if (typeof module !== 'undefined' && module.exports) {
