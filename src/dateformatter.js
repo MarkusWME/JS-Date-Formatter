@@ -1,10 +1,39 @@
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = DateFormatter;
+    var TimezoneManager = require('timezonemanager.js');
 }
 
 function DateFormatter() {
     var _localeSettings = null;
     var _currentDate = null;
+    var _timezoneManager = null;
+
+    function getDefaultTimezone() {
+        var offset = new Date().getTimezoneOffset();
+        var negative = false;
+        if (offset < 0) {
+            negative = true;
+            offset *= -1;
+        }
+        var hours = offset / 60;
+        var minutes = offset % 60;
+        return {
+            name: 'UTC' + (negative ? '+' : '-') + hours + (minutes > 0 ? ':' + minutes : ''),
+            zone: 'UTC',
+            zoneDST: 'UTC'
+        };
+    }
+
+    DateFormatter.prototype.setUseTimezoneManager = function(use, callback) {
+        _timezoneManager = null;
+        if (use === true) {
+            try {
+                _timezoneManager = new TimezoneManager();
+                _timezoneManager.getCurrentPosition(callback);
+            } catch (RefereneError) {
+            }
+        }
+    };
 
     DateFormatter.prototype.setLocaleSettings = function(localeSettings) {
         if (typeof localeSettings === 'object') {
@@ -105,9 +134,23 @@ function DateFormatter() {
     };
 
     DateFormatter.prototype.getWeek = function(timestamp) {
-        this.getDate(timestamp);
+        timestamp = this.getDate(timestamp);
         var week = Math.ceil((this.getDayOfYear() + this.getYearISOOffset()) / 7);
-        return week > 0 ? week : 53;
+        if (week <= 0) {
+            week = this.getWeeks(new Date(this.getYear() - 1, 0, 1));
+            this.setDate(timestamp);
+        }
+        return week;
+    };
+
+    DateFormatter.prototype.getWeeks = function(timestamp) {
+        this.getDate(timestamp);
+        var days = this.getYearISOOffset();
+        var leapYear = this.isLeapYear();
+        for (var i = 1; i <= 12; i++) {
+            days += this.getDaysFromMonth(i, leapYear);
+        }
+        return Math.ceil(days / 7);
     };
 
     DateFormatter.prototype.getMonth = function(timestamp) {
@@ -272,18 +315,35 @@ function DateFormatter() {
     };
 
     DateFormatter.prototype.isDaylightSavingTime = function(timestamp) {
-        this.getDate(timestamp);
-        /// TODO: implement
+        timestamp = this.getDate(timestamp);
+        if (_timezoneManager === null) {
+            if (this.getTimezoneOffset() !== new Date(this.getYear(), 0, 1).getTimezoneOffset()) {
+                return 1;
+            }
+            return 0;
+        }
+        return _timezoneManager.isDaylightSavingTime(timestamp, _timezoneManager.getCurrentTimezone()) === true ? 1 : 0;
+    };
+
+    DateFormatter.prototype.getTimezoneObject = function() {
+        if (_timezoneManager === null) {
+            return getDefaultTimezone();
+        }
+        return _timezoneManager.getCurrentTimezone();
     };
 
     DateFormatter.prototype.getTimezone = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        return this.getTimezoneObject().name;
     };
 
     DateFormatter.prototype.getTimezoneShort = function(timestamp) {
         this.getDate(timestamp);
-        /// TODO: implement
+        var timezoneObject = this.getTimezoneObject();
+        if (this.isDaylightSavingTime()) {
+            return timezoneObject.zoneDST;
+        }
+        return timezoneObject.zone;
     };
 
     DateFormatter.prototype.getGMT = function(timestamp) {
@@ -424,4 +484,6 @@ function DateFormatter() {
         }
         return formatted;
     };
+
+    this.setUseTimezoneManager(true);
 }

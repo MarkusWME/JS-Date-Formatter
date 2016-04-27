@@ -6,6 +6,4 @@ A JavaScript class that allows the user to format timestamps in JavaScript like 
 
 To see the full functionality of the php date function visit [php.net](http://nl3.php.net/manual/de/function.date.php "Link to php.net date function description")
 
-**This script is not finished yet! It should be available soon.**
-
-**Update: Only timezone dependent formats are missing.**
+**This script is not finished yet! The timezones that are missing now should be available soon (only Europe is currently available).**

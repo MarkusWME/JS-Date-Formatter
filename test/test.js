@@ -365,6 +365,18 @@ QUnit.test('Test DateFormatter without TimezoneManager', function(assert) {
     assert.deepEqual(formatter.getTimezone().indexOf('UTC'), 0);
 });
 
+QUnit.test('Test function getTimezoneShort', function(assert) {
+    var formatter = new DateFormatter();
+    assert.notDeepEqual(formatter.getTimezoneShort(new Date(2016, 0, 1)).length, 0);
+});
+
+QUnit.test('Test function isDaylightSavingTime', function(assert) {
+    var formatter = new DateFormatter();
+    formatter.setUseTimezoneManager(false);
+    assert.deepEqual(formatter.isDaylightSavingTime(new Date(2016, 0, 1)), 0);
+    assert.deepEqual(formatter.isDaylightSavingTime(new Date(2016, 7, 1)), 1);
+});
+
 QUnit.test('Test function getTimezone of the TimezoneManager class', function(assert) {
     var timezone = new TimezoneManager();
     assert.expect(4);
@@ -377,12 +389,21 @@ QUnit.test('Test function getTimezone of the TimezoneManager class', function(as
 
 QUnit.test('Test function getCurrentTimezone of the TimezoneManager class', function(assert) {
     var timezone = new TimezoneManager();
-    assert.deepEqual(timezone.getCurrentTimezone().indexOf('UTC') < 0, true);
+    timezone.getCurrentPosition();
+    assert.deepEqual(timezone.getCurrentTimezone().name.indexOf('UTC'), 0);
+
 });
 
 QUnit.test('Test function getTimezoneByName of the TimezoneManager class', function(assert) {
     var timezone = new TimezoneManager();
+    assert.expect(2);
     assert.deepEqual(timezone.getTimezoneByName('Europe/Berlin').name, 'Europe/Berlin');
+    assert.deepEqual(timezone.getTimezoneByName('Here').name.substr(0, 3), 'UTC');
+});
+
+QUnit.test('Test function isDaylightSavingTime of the TimezoneManager class', function(assert) {
+    var timezone = new TimezoneManager();
+    assert.deepEqual(timezone.isDaylightSavingTime(timestamp, timezone.getTimezone(48.2, 16.18)), true);
 });
 
 if (typeof module !== 'undefined' && module.exports) {
