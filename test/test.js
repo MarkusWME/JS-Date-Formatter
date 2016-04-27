@@ -1,8 +1,8 @@
 if (typeof module !== 'undefined' && module.exports) {
     var QUnit = require('qunitjs');
     require('qunit-tap')(QUnit, console.log);
-    var DateFormatter = require('../src/dateformatter.js');
     var TimezoneManager = require('../src/timezonemanager.js');
+    var DateFormatter = require('../src/dateformatter.js');
 }
 
 var locales = {
@@ -403,7 +403,9 @@ QUnit.test('Test function getTimezoneByName of the TimezoneManager class', funct
 
 QUnit.test('Test function isDaylightSavingTime of the TimezoneManager class', function(assert) {
     var timezone = new TimezoneManager();
+    assert.expect(2);
     assert.deepEqual(timezone.isDaylightSavingTime(timestamp, timezone.getTimezone(48.2, 16.18)), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(timestamp, timezone.getTimezone(46.21, 48.03)), false);
 });
 
 if (typeof module !== 'undefined' && module.exports) {

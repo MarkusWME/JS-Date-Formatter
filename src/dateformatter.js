@@ -1,6 +1,6 @@
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = DateFormatter;
-    var TimezoneManager = require('timezonemanager.js');
+    var TimezoneManager = require('./src/timezonemanager.js');
 }
 
 function DateFormatter() {

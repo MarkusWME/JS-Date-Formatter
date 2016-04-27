@@ -10,6 +10,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +52.22,
             longitude: +4.54,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -19,6 +20,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +42.3,
             longitude: +1.31,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -28,15 +30,15 @@ function TimezoneManager() {
             zoneDST: 'MSK+1',
             latitude: +46.21,
             longitude: +48.03,
-            DSTDirection: +0,
-            getDSTStart: getESTStart,
-            getDSTEnd: getESTEnd
+            baseUTCOffset: +3,
+            DSTDirection: +0
         }, {
             name: 'Europe/Athens',
             zone: 'EET',
             zoneDST: 'EEST',
             latitude: +37.58,
             longitude: +23.43,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -46,6 +48,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +44.5,
             longitude: +20.3,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -55,6 +58,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +52.3,
             longitude: +13.22,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -64,6 +68,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +48.09,
             longitude: +17.07,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -73,6 +78,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +50.5,
             longitude: +4.2,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -82,6 +88,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +44.26,
             longitude: +26.06,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -91,6 +98,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +47.3,
             longitude: +19.05,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -100,6 +108,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +35.1,
             longitude: +33.22,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -109,6 +118,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +47.0,
             longitude: +28.5,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -118,6 +128,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +55.4,
             longitude: +12.35,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -127,6 +138,7 @@ function TimezoneManager() {
             zoneDST: 'GMT',
             latitude: +53.2,
             longitude: -6.15,
+            baseUTCOffset: +0,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -136,6 +148,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +36.08,
             longitude: -5.21,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -145,6 +158,7 @@ function TimezoneManager() {
             zoneDST: 'BST',
             latitude: +49.27,
             longitude: -2.32,
+            baseUTCOffset: +0,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -154,6 +168,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +60.10,
             longitude: +24.58,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -163,6 +178,7 @@ function TimezoneManager() {
             zoneDST: 'GMT',
             latitude: +54.09,
             longitude: -4.28,
+            baseUTCOffset: +0,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -172,6 +188,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +41.01,
             longitude: +28.58,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -181,6 +198,7 @@ function TimezoneManager() {
             zoneDST: 'GMT',
             latitude: +49.12,
             longitude: -2.07,
+            baseUTCOffset: +0,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -190,15 +208,15 @@ function TimezoneManager() {
             zoneDST: 'EST',
             latitude: +54.43,
             longitude: +20.3,
-            DSTDirection: +0,
-            getDSTStart: getESTStart,
-            getDSTEnd: getESTEnd
+            baseUTCOffset: +2,
+            DSTDirection: +0
         }, {
             name: 'Europe/Kiev',
             zone: 'EET',
             zoneDST: 'EEST',
             latitude: +50.26,
             longitude: +30.31,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -208,15 +226,15 @@ function TimezoneManager() {
             zoneDST: 'MSK',
             latitude: +58.36,
             longitude: +49.39,
-            DSTDirection: +0,
-            getDSTStart: getESTStart,
-            getDSTEnd: getESTEnd
+            baseUTCOffset: +3,
+            DSTDirection: +0
         }, {
             name: 'Europe/Lisbon',
             zone: 'WET',
             zoneDST: 'WEST',
             latitude: +38.43,
             longitude: -9.08,
+            baseUTCOffset: +0,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -226,6 +244,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +46.03,
             longitude: +14.31,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -235,6 +254,7 @@ function TimezoneManager() {
             zoneDST: 'BST',
             latitude: +51.303,
             longitude: -7.31,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -244,6 +264,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +49.36,
             longitude: +6.09,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -253,6 +274,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +40.24,
             longitude: -3.41,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -262,6 +284,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +35.54,
             longitude: +14.31,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -271,6 +294,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +60.06,
             longitude: +19.57,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -280,6 +304,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +43.42,
             longitude: +7.23,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -289,15 +314,15 @@ function TimezoneManager() {
             zoneDST: 'MSK',
             latitude: +55.4521,
             longitude: +37.3704,
-            DSTDirection: +0,
-            getDSTStart: getESTStart,
-            getDSTEnd: getESTEnd
+            baseUTCOffset: +3,
+            DSTDirection: +0
         }, {
             name: 'Europe/Oslo',
             zone: 'CET',
             zoneDST: 'CEST',
             latitude: +59.55,
             longitude: +10.45,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -307,6 +332,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +48.52,
             longitude: +2.2,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -316,6 +342,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +42.26,
             longitude: +19.16,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -325,6 +352,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +50.05,
             longitude: +14.26,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -334,6 +362,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +56.57,
             longitude: +24.06,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -343,6 +372,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +41.54,
             longitude: +12.29,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -351,16 +381,16 @@ function TimezoneManager() {
             zone: 'SAMT',
             zoneDST: 'SAMT',
             latitude: +53.12,
-            longitude: +50-09,
-            DSTDirection: +0,
-            getDSTStart: getESTStart,
-            getDSTEnd: getESTEnd
+            longitude: +50.09,
+            baseUTCOffset: +4,
+            DSTDirection: +0
         }, {
             name: 'Europe/San_Marino',
             zone: 'CET',
             zoneDST: 'CEST',
             latitude: +43.55,
             longitude: +12.28,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -370,6 +400,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +43.52,
             longitude: +18.25,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -379,15 +410,15 @@ function TimezoneManager() {
             zoneDST: 'MSK',
             latitude: +44.27,
             longitude: +34.06,
-            DSTDirection: +0,
-            getDSTStart: getESTStart,
-            getDSTEnd: getESTEnd
+            baseUTCOffset: +3,
+            DSTDirection: +0
         }, {
             name: 'Europe/Skopje',
             zone: 'CET',
             zoneDST: 'CEST',
             latitude: +41.59,
             longitude: +21.26,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -397,6 +428,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +42.41,
             longitude: +23.19,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -406,6 +438,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +59.2,
             longitude: +18.03,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -415,6 +448,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +59.25,
             longitude: +24.45,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -424,6 +458,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +41.2,
             longitude: +19.5,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -433,15 +468,15 @@ function TimezoneManager() {
             zoneDST: 'MSK+1',
             latitude: +54.2,
             longitude: +48.24,
-            DSTDirection: +0,
-            getDSTStart: getESTStart,
-            getDSTEnd: getESTEnd
+            baseUTCOffset: +3,
+            DSTDirection: +0
         }, {
             name: 'Europe/Uzhgorod',
             zone: 'EET',
             zoneDST: 'EEST',
             latitude: +48.37,
             longitude: +22.18,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -451,15 +486,17 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +47.09,
             longitude: +9.31,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
         }, {
-            name: 'Europe/Vatikan',
+            name: 'Europe/Vatican',
             zone: 'CET',
             zoneDST: 'CEST',
             latitude: +41.5408,
             longitude: +12.2711,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -469,6 +506,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +48.13,
             longitude: +16.2,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -478,6 +516,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +54.41,
             longitude: +25.19,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -487,15 +526,15 @@ function TimezoneManager() {
             zoneDST: 'MSK',
             latitude: +48.44,
             longitude: +44.25,
-            DSTDirection: +0,
-            getDSTStart: getESTStart,
-            getDSTEnd: getESTEnd
+            baseUTCOffset: +3,
+            DSTDirection: +0
         }, {
             name: 'Europe/Warsaw',
             zone: 'CET',
             zoneDST: 'CEST',
             latitude: +52.15,
             longitude: +21.0,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -505,6 +544,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +45.48,
             longitude: +15.58,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -514,6 +554,7 @@ function TimezoneManager() {
             zoneDST: 'EEST',
             latitude: +47.5,
             longitude: +35.1,
+            baseUTCOffset: +2,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -523,6 +564,7 @@ function TimezoneManager() {
             zoneDST: 'CEST',
             latitude: +47.23,
             longitude: +8.32,
+            baseUTCOffset: +1,
             DSTDirection: +1,
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
@@ -628,6 +670,8 @@ function TimezoneManager() {
         if (typeof timestamp === 'object' && typeof timezone === 'object') {
             if (timezone.getDSTStart !== undefined && timezone.getDSTEnd !== undefined) {
                 return timestamp >= timezone.getDSTStart(timestamp.getFullYear()) && timestamp <= timezone.getDSTEnd(timestamp.getFullYear()) - timezone.DSTDirection;
+            } else if (timezone.DSTDirection === 0) {
+                return false;
             } else {
                 if (timestamp.getTimezoneOffset() !== new Date(timestamp.getFullYear(), 0, 1).getTimezoneOffset()) {
                     return true;
