@@ -299,6 +299,14 @@ function TimezoneManager() {
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
         }, {
+            name: 'Europe/Minsk',
+            zone: 'MSK',
+            zoneDST: 'MSK',
+            latitude: +53.54,
+            longitude: +27.34,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
             name: 'Europe/Monaco',
             zone: 'CET',
             zoneDST: 'CEST',
