@@ -404,10 +404,12 @@ QUnit.test('Test function getTimezoneByName of the TimezoneManager class', funct
 QUnit.test('Test function isDaylightSavingTime of the TimezoneManager class', function(assert) {
     var timezone = new TimezoneManager();
     var timezoneCasablanca = timezone.getTimezoneByName('Africa/Casablanca');
-    assert.expect(6);
+    var timezoneWindhoek = timezone.getTimezoneByName('Africa/Windhoek');
+    assert.expect(7);
     assert.deepEqual(timezone.isDaylightSavingTime(timestamp, timezone.getTimezone(48.2, 16.18)), true);
     assert.deepEqual(timezone.isDaylightSavingTime(timestamp, timezone.getTimezone(46.21, 48.03)), false);
-    assert.deepEqual(timezone.isDaylightSavingTime(timestamp, timezone.getTimezoneByName('Africa/Windhoek')), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 2, 12), timezoneWindhoek), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 4, 23), timezoneWindhoek), false);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 3, 29), timezoneCasablanca), true);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 5, 6), timezoneCasablanca), false);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 6, 11), timezoneCasablanca), true);
