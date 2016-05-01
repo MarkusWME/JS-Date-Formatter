@@ -5,6 +5,430 @@ if (typeof module !== 'undefined' && module.exports) {
 function TimezoneManager() {
     var _timezones = [
         {
+            name: 'Africa/Abidjan',
+            zone: 'UTC',
+            zoneDST: 'UTC',
+            latitude: +5.19,
+            longitude: -4.02,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Accra',
+            zone: 'UTC',
+            zoneDST: 'UTC',
+            latitude: +5.33,
+            longitude: -0.13,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Addis_Ababa',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: +9.02,
+            longitude: +38.42,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Algiers',
+            zone: 'CET',
+            zoneDST: 'CET',
+            latitude: +36.47,
+            longitude: +3.03,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Asmara',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: +15.2,
+            longitude: +38.53,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Bamako',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +12.39,
+            longitude: -8.0,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Bangui',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: +4.22,
+            longitude: +18.35,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Banjul',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +13.28,
+            longitude: -16.39,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Bissau',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +11.51,
+            longitude: -15.35,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Blantyre',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -15.47,
+            longitude: +35.0,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Brazzaville',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -4.16,
+            longitude: +15.17,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Bujumbura',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -3.23,
+            longitude: +29.22,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Cairo',
+            zone: 'EET',
+            zoneDST: 'EET',
+            latitude: +30.03,
+            longitude: +31.15,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Casablanca',
+            zone: 'WET',
+            zoneDST: 'WEST',
+            latitude: +33.39,
+            longitude: -7.35,
+            baseUTCOffset: +0,
+            DSTDirection: +1,
+            getDSTStart: getRamadanDSTStart,
+            getDSTEnd: getRamadanDSTEnd
+        }, {
+            name: 'Africa/Ceuta',
+            zone: 'CET',
+            zoneDST: 'CEST',
+            latitude: +35.53,
+            longitude: -5.19,
+            baseUTCOffset: +2,
+            DSTDirection: +1,
+            getDSTStart: getESTStart,
+            getDSTEnd: getESTEnd
+        }, {
+            name: 'Africa/Conakry',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +9.31,
+            longitude: -13.43,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Dakar',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +14.40,
+            longitude: -17.26,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Dar_es_Salaam',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: -6.48,
+            longitude: +39.17,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Djibouti',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: +11.36,
+            longitude: +43.09,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Douala',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: +4.03,
+            longitude: +9.42,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/El_Aaiun',
+            zone: 'WET',
+            zoneDST: 'WEST',
+            latitude: +27.09,
+            longitude: -13.12,
+            baseUTCOffset: +0,
+            DSTDirection: +1,
+            getDSTStart: getRamadanDSTStart,
+            getDSTEnd: getRamadanDSTEnd
+        }, {
+            name: 'Africa/Freetown',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +8.30,
+            longitude: -13.15,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Gaborone',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -24.39,
+            longitude: +25.55,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Harare',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -17.50,
+            longitude: +31.03,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Johannesburg',
+            zone: 'SAST',
+            zoneDST: 'SAST',
+            latitude: -26.15,
+            longitude: +28.0,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Juba',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: +4.51,
+            longitude: +31.36,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Kampala',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: +0.19,
+            longitude: +32.25,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Khartoum',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: +15.36,
+            longitude: +32.32,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Kigali',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -1.57,
+            longitude: +30.04,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Kinshasa',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: -4.18,
+            longitude: +15.18,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Lagos',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: +6.27,
+            longitude: +3.24,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Libreville',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: +0.23,
+            longitude: +9.27,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Lome',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +6.08,
+            longitude: +1.13,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Luanda',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: -8.48,
+            longitude: +13.14,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Lubumbashi',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -11.4,
+            longitude: +27.28,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Lusaka',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -15.25,
+            longitude: +28.17,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Malabo',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: +3.45,
+            longitude: +8.47,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Maputo',
+            zone: 'CAT',
+            zoneDST: 'CAT',
+            latitude: -25.58,
+            longitude: +32.35,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Maseru',
+            zone: 'SAST',
+            zoneDST: 'SAST',
+            latitude: -29.28,
+            longitude: +27.3,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Mbabane',
+            zone: 'SAST',
+            zoneDST: 'SAST',
+            latitude: -26.18,
+            longitude: +31.06,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Mogadishu',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: +2.04,
+            longitude: +45.22,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Monrovia',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +6.18,
+            longitude: -10.47,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Nairobi',
+            zone: 'EAT',
+            zoneDST: 'EAT',
+            latitude: -1.17,
+            longitude: +36.49,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Ndjamena',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: +12.07,
+            longitude: +15.03,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Niamey',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: +13.31,
+            longitude: +2.07,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Nouakchott',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +18.06,
+            longitude: -15.57,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Ouagadougou',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +12.22,
+            longitude: -1.31,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Porto-Novo',
+            zone: 'WAT',
+            zoneDST: 'WAT',
+            latitude: +6.29,
+            longitude: +2.37,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Sao_Tome',
+            zone: 'GMT',
+            zoneDST: 'GMT',
+            latitude: +0.20,
+            longitude: +6.44,
+            baseUTCOffset: +0,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Tripoli',
+            zone: 'EET',
+            zoneDST: 'EET',
+            latitude: +32.54,
+            longitude: +13.11,
+            baseUTCOffset: +2,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Tunis',
+            zone: 'CET',
+            zoneDST: 'CET',
+            latitude: +36.48,
+            longitude: +10.11,
+            baseUTCOffset: +1,
+            DSTDirection: +0
+        }, {
+            name: 'Africa/Windhoek',
+            zone: 'WAT',
+            zoneDST: 'WAST',
+            latitude: -22.34,
+            longitude: +17.06,
+            baseUTCOffset: +1,
+            DSTDirection: +1,
+            getDSTStart: getWindhoekDSTStart,
+            getDSTEnd: getWindhoekDSTEnd
+        }, {
             name: 'Europe/Amsterdam',
             zone: 'CET',
             zoneDST: 'CEST',
@@ -585,12 +1009,59 @@ function TimezoneManager() {
 
     var _geoposition = null;
 
+    function getDaysOfMonth(year, month) {
+        var days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
+            days[1] = 29;
+        }
+        return days[month];
+    }
+
+    function findFirstOfMonth(year, month, day) {
+        var date = new Date(year, month, 1);
+        day = date.getDate() - date.getDay() + day;
+        return day > 0 ? day : day + 7;
+    }
+
+    function findLastOfMonth(year, month, day) {
+        var date = new Date(year, month, getDaysOfMonth(year, month));
+        return date.getDate() - date.getDay() + day;
+    }
+
     function getESTStart(year) {
-        return new Date(Date.UTC(year, 2, (31 - ((((5 * year) / 4) + 4) % 7)), 1, 0, 0, 0));
+        return new Date(Date.UTC(year, 2, findLastOfMonth(year, 2, 0), 1, 0, 0, 0));
     }
 
     function getESTEnd(year) {
-        return new Date(Date.UTC(year, 9, (31 - ((((5 * year) / 4) + 1) % 7)), 1, 0, 0, 0));
+        return new Date(Date.UTC(year, 9, findLastOfMonth(year, 9, 0), 1, 0, 0, 0));
+    }
+
+    function getWindhoekDSTStart(year) {
+        return new Date(year, 8, findFirstOfMonth(year, 8, 0), 2, 0, 0, 0);
+    }
+
+    function getWindhoekDSTEnd(year) {
+        return new Date(year, 3, findFirstOfMonth(year, 3, 0), 2, 0, 0, 0);
+    }
+
+    function getRamadanDSTStart(year, month, day) {
+
+    }
+
+    function getRamadanDSTEnd(year, month, day) {
+
+    }
+
+    function getRamadanStart(year) {
+        
+    }
+
+    function getRamadanEnd(year) {
+
+    }
+
+    function isRamadan(year, month, day) {
+
     }
 
     function getDefaultTimezone() {
@@ -677,7 +1148,12 @@ function TimezoneManager() {
         }
         if (typeof timestamp === 'object' && typeof timezone === 'object') {
             if (timezone.getDSTStart !== undefined && timezone.getDSTEnd !== undefined) {
-                return timestamp >= timezone.getDSTStart(timestamp.getFullYear()) && timestamp <= timezone.getDSTEnd(timestamp.getFullYear()) - timezone.DSTDirection;
+                var DSTStart = timezone.getDSTStart(timestamp.getFullYear(), timestamp.getMonth(), timestamp.getDate());
+                var DSTEnd = timezone.getDSTEnd(timestamp.getFullYear(), timestamp.getMonth(), timestamp.getDate());
+                if (DSTStart > DSTEnd) {
+                    return timestamp <= DSTEnd || timestamp >= DSTStart;
+                }
+                return timestamp >= DSTStart && timestamp <= DSTEnd;
             } else if (timezone.DSTDirection === 0) {
                 return false;
             } else {
