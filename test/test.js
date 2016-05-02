@@ -411,7 +411,7 @@ QUnit.test('Test function isDaylightSavingTime of the TimezoneManager class', fu
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 2, 12), timezoneWindhoek), true);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 4, 23), timezoneWindhoek), false);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 3, 29), timezoneCasablanca), true);
-    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 5, 6), timezoneCasablanca), false);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 5, 8), timezoneCasablanca), false);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 6, 11), timezoneCasablanca), true);
 });
 

@@ -370,13 +370,13 @@ function DateFormatter() {
     };
 
     DateFormatter.prototype.getDateISO = function(timestamp) {
-        this.getDate(timestamp);
-        return this.format('Y-m-d\\TH:i:sP');
+        timestamp = this.getDate(timestamp);
+        return this.format('Y-m-d\\TH:i:sP', timestamp);
     };
 
     DateFormatter.prototype.getDateRFC = function(timestamp) {
-        this.getDate(timestamp);
-        return this.format('D, d M Y H:i:s O');
+        timestamp = this.getDate(timestamp);
+        return this.format('D, d M Y H:i:s O', timestamp);
     };
 
     DateFormatter.prototype.getUnixTimestamp = function(timestamp) {

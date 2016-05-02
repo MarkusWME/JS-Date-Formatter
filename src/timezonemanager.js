@@ -1045,23 +1045,61 @@ function TimezoneManager() {
     }
 
     function getRamadanDSTStart(year, month, day) {
-
+        if (getRamadanStart(year, month + 1, day) >= new Date(year, month, day)) {
+            return getESTStart(year);
+        }
+        return getRamadanEnd(year, month + 1, day);
     }
 
     function getRamadanDSTEnd(year, month, day) {
-
+        if (getRamadanEnd(year, month + 1, day) >= new Date(year, month, day)) {
+            return getRamadanStart(year, month + 1, day);
+        }
+        return getESTEnd(year);
     }
 
-    function getRamadanStart(year) {
-        
+    function getIslamicFromGregorianDate(year, month, day) {
+        var c0 = Math.floor((month - 3) / 12);
+        var x4 = year + c0;
+        var x3 = Math.floor(x4 / 100);
+        var x2 = x4 % 100;
+        var x1 = month - (12 * c0) - 3;
+        var cjdn = Math.floor((146097 * x3) / 4) + Math.floor((36525 * x2) / 100) + Math.floor(((153 * x1) + 2) / 5) + day + 1721119;
+        var k2 = (30 * (cjdn - 1948440)) + 15;
+        var k1 = (11 * Math.floor((k2 % 10631) / 30)) + 5;
+        var islamicDate = [];
+        islamicDate['year'] = Math.floor(k2 / 10631) + 1;
+        islamicDate['month'] = Math.floor(k1 / 325) + 1;
+        islamicDate['day'] = Math.floor((k1 % 325) / 11) + 1;
+        return islamicDate;
     }
 
-    function getRamadanEnd(year) {
-
+    function getGregorianFromIslamicDate(year, month, day) {
+        var cjdn = Math.floor(((10631 * year) - 10617) / 30) + Math.floor(((325 * month) - 320) / 11) + day + 1948439;
+        var k3 = (4 * cjdn) - 6884477;
+        var x3 = Math.floor(k3 / 146097);
+        var r3 = k3 % 146097;
+        var k2 = (100 * Math.floor(r3 / 4)) + 99;
+        var x2 = Math.floor(k2 / 36525);
+        var r2 = k2 % 36525;
+        var k1 = (5 * Math.floor(r2 / 100)) + 2;
+        var x1 = Math.floor(k1 / 153);
+        var r1 = k1 % 153;
+        var c0 = Math.floor((x1 + 2) / 12);
+        year = (100 * x3) + x2 + c0;
+        month = x1 - (12 * c0) + 3;
+        day = Math.floor(r1 / 5) + 1;
+        return new Date(year, month - 1, day);
     }
 
-    function isRamadan(year, month, day) {
+    function getRamadanStart(year, month, day) {
+        var islamicDate = getIslamicFromGregorianDate(year, month + 1, day);
+        return getGregorianFromIslamicDate(islamicDate['year'], 9, 1);
+    }
 
+    function getRamadanEnd(year, month, day) {
+        var islamicDate = getIslamicFromGregorianDate(year, month + 1, day);
+        return getGregorianFromIslamicDate(islamicDate['year'], 9, 30);
     }
 
     function getDefaultTimezone() {
