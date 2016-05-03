@@ -405,7 +405,13 @@ QUnit.test('Test function isDaylightSavingTime of the TimezoneManager class', fu
     var timezone = new TimezoneManager();
     var timezoneCasablanca = timezone.getTimezoneByName('Africa/Casablanca');
     var timezoneWindhoek = timezone.getTimezoneByName('Africa/Windhoek');
-    assert.expect(7);
+    var timezoneAdak = timezone.getTimezoneByName('America/Adak');
+    var timezoneAsuncion = timezone.getTimezoneByName('America/Asuncion');
+    var timezoneCampoGrande = timezone.getTimezoneByName('America/Campo_Grande');
+    var timezoneChihuahua = timezone.getTimezoneByName('America/Chihuahua');
+    var timezoneGodthab = timezone.getTimezoneByName('America/Godthab');
+    var timezoneSantiago = timezone.getTimezoneByName('America/Santiago');
+    assert.expect(19);
     assert.deepEqual(timezone.isDaylightSavingTime(timestamp, timezone.getTimezone(48.2, 16.18)), true);
     assert.deepEqual(timezone.isDaylightSavingTime(timestamp, timezone.getTimezone(46.21, 48.03)), false);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 2, 12), timezoneWindhoek), true);
@@ -413,6 +419,18 @@ QUnit.test('Test function isDaylightSavingTime of the TimezoneManager class', fu
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 3, 29), timezoneCasablanca), true);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 5, 8), timezoneCasablanca), false);
     assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 6, 11), timezoneCasablanca), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 2, 14), timezoneAdak), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 10, 7), timezoneAdak), false);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 1, 1), timezoneAsuncion), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 6, 7), timezoneAsuncion), false);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 1, 1), timezoneCampoGrande), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 6, 7), timezoneCampoGrande), false);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 1, 1), timezoneChihuahua), false);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 6, 7), timezoneChihuahua), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 1, 1), timezoneGodthab), false);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 6, 7), timezoneGodthab), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 1, 1), timezoneSantiago), true);
+    assert.deepEqual(timezone.isDaylightSavingTime(new Date(2016, 6, 7), timezoneSantiago), false);
 });
 
 if (typeof module !== 'undefined' && module.exports) {
