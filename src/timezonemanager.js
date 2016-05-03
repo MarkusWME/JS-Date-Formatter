@@ -1733,6 +1733,110 @@ function TimezoneManager() {
             getDSTStart: getUSADSTStart,
             getDSTEnd: getUSADSTEnd
         }, {
+            name: 'Antarctica/Casey',
+            zone: 'CAST',
+            zoneDST: 'CAST',
+            latitude: -66.17,
+            longitude: +110.31,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Antarctica/Davis',
+            zone: 'DAVT',
+            zoneDST: 'DAVT',
+            latitude: -68.35,
+            longitude: +77.58,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Antarctica/DumontDUrville',
+            zone: 'DDUT',
+            zoneDST: 'DDUT',
+            latitude: -66.4,
+            longitude: +140.01,
+            baseUTCOffset: +10,
+            DSTDirection: +0
+        }, {
+            name: 'Antarctica/Macquarie',
+            zone: 'AEDT',
+            zoneDST: 'AEDT',
+            latitude: -54.3,
+            longitude: +158.57,
+            baseUTCOffset: +11,
+            DSTDirection: +0
+        }, {
+            name: 'Antarctica/Mawson',
+            zone: 'MAWT',
+            zoneDST: 'MAWT',
+            latitude: -67.36,
+            longitude: +62.53,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Antarctica/McMurdo',
+            zone: 'NZST',
+            zoneDST: 'NZDT',
+            latitude: -77.5,
+            longitude: +166.36,
+            baseUTCOffset: +12,
+            DSTDirection: +1,
+            getDSTStart: getNewZealandDSTStart,
+            getDSTEnd: getNewZealandDSTEnd
+        }, {
+            name: 'Antarctica/Palmer',
+            zone: 'CLT',
+            zoneDST: 'CLST',
+            latitude: -64.48,
+            longitude: -64.06,
+            baseUTCOffset: -4,
+            DSTDirection: +1,
+            getDSTStart: getChileDSTStart,
+            getDSTEnd: getChileDSTEnd
+        }, {
+            name: 'Antarctica/Rothera',
+            zone: 'ART',
+            zoneDST: 'ART',
+            latitude: -67.34,
+            longitude: -68.08,
+            baseUTCOffset: -3,
+            DSTDirection: +0
+        }, {
+            name: 'Antarctica/Syowa',
+            zone: 'SYOT',
+            zoneDST: 'SYOT',
+            latitude: -69.0022,
+            longitude: +39.3524,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Antarctica/Troll',
+            zone: 'GMT',
+            zoneDST: 'CET|CEST',
+            latitude: -72.0041,
+            longitude: +232.06,
+            baseUTCOffset: +0,
+            DSTDirection: +1,
+            getDSTStart: getTrollDSTStart,
+            getDSTEnd: getTrollDSTEnd
+        }, {
+            name: 'Antarctica/Vostok',
+            zone: 'VOST',
+            zoneDST: 'VOST',
+            latitude: -78.24,
+            longitude: +106.54,
+            baseUTCOffset: +6,
+            DSTDirection: +0
+        }, {
+            name: 'Arctic/Longyearbyen',
+            zone: 'CET',
+            zoneDST: 'CEST',
+            latitude: +78.0,
+            longitude: +16.0,
+            baseUTCOffset: +1,
+            DSTDirection: +1,
+            getDSTStart: getESTStart,
+            getDSTEnd: getESTEnd
+        }, {
             name: 'Europe/Amsterdam',
             zone: 'CET',
             zoneDST: 'CEST',
@@ -2426,6 +2530,36 @@ function TimezoneManager() {
     function getChileDSTEnd(year) {
         //noinspection JSUnresolvedVariable
         return convertDateToMatchTimezone(new Date(year, 4, findLastOfMonth(year, 4, 0) + 14, 0, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getNewZealandDSTStart(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 8, findLastOfMonth(year, 8, 0), 2, 0, 0, 0), this.baseUTCOffset);
+    }
+
+    function getNewZealandDSTEnd(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 3, findFirstOfMonth(year, 3, 0), 2, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getTrollDSTStart(year, month, day) {
+        var cest = new Date(Date.UTC(year, 2, findLastOfMonth(year, 2, 0), 1, 0, 0, 0));
+        if (cest > new Date(year, month, day)) {
+            //noinspection JSUnresolvedVariable
+            this.DSTDirection = +1;
+            return new Date(Date.UTC(year, 2, 1, 1, 0, 0, 0));
+        }
+        //noinspection JSUnresolvedVariable
+        this.DSTDirection = +2;
+        return cest;
+    }
+
+    function getTrollDSTEnd(year, month, day) {
+        var cest = new Date(Date.UTC(year, 9, findLastOfMonth(year, 9, 0), 1, 0, 0, 0));
+        if (cest < new Date(year, month, day)) {
+            return new Date(Date.UTC(year, 10, 7, 1, 0, 0, 0));
+        }
+        return cest;
     }
 
     function getIslamicFromGregorianDate(year, month, day) {
