@@ -5,4 +5,4 @@ A JavaScript class that allows the user to format timestamps in JavaScript like 
 
 To see the full functionality of the php date function visit [php.net](http://nl3.php.net/manual/en/function.date.php "Link to php.net date function description")
 
-**This script is not finished yet! The timezones that are missing should be available soon (Europe, Africa, America, Antarctic, Arctic and Asia are currently available and working).**
+**All timezones are available now. There will be more information about the functions of the script soon.**
