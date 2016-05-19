@@ -1837,6 +1837,630 @@ function TimezoneManager() {
             getDSTStart: getESTStart,
             getDSTEnd: getESTEnd
         }, {
+            name: 'Asia/Aden',
+            zone: 'AST',
+            zoneDST: 'AST',
+            latitude: +12.45,
+            longitude: +45.12,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Almaty',
+            zone: 'ALMT',
+            zoneDST: 'ALMT',
+            latitude: +43.15,
+            longitude: +76.57,
+            baseUTCOffset: +6,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Amman',
+            zone: 'AST',
+            zoneDST: 'AST',
+            latitude: +31.57,
+            longitude: +35.56,
+            baseUTCOffset: +2,
+            DSTDirection: +1,
+            getDSTStart: getJordanDSTStart,
+            getDSTEnd: getJordanDSTEnd
+        }, {
+            name: 'Asia/Anadyr',
+            zone: 'ANAT',
+            zoneDST: 'ANAT',
+            latitude: +64.45,
+            longitude: +177.29,
+            baseUTCOffset: +12,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Aqtau',
+            zone: 'AQTT',
+            zoneDST: 'AQTT',
+            latitude: +44.31,
+            longitude: +50.16,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Aqtobe',
+            zone: 'AQTT',
+            zoneDST: 'AQTT',
+            latitude: +50.17,
+            longitude: +57.1,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Ashgabat',
+            zone: 'TMT',
+            zoneDST: 'TMT',
+            latitude: +37.57,
+            longitude: +58.23,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Baku',
+            zone: 'AZT',
+            zoneDST: 'AZT',
+            latitude: +40.23,
+            longitude: +49.51,
+            baseUTCOffset: +4,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Baghdad',
+            zone: 'AST',
+            zoneDST: 'AST',
+            latitude: +33.21,
+            longitude: +44.25,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Bahrain',
+            zone: 'AST',
+            zoneDST: 'AST',
+            latitude: +26.23,
+            longitude: +50.35,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Barnaul',
+            zone: 'MSK+4',
+            zoneDST: 'MSK+4',
+            latitude: +53.22,
+            longitude: +83.45,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Bangkok',
+            zone: 'ICT',
+            zoneDST: 'ICT',
+            latitude: +13.45,
+            longitude: +100.31,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Beirut',
+            zone: 'EET',
+            zoneDST: 'EEST',
+            latitude: +33.53,
+            longitude: +35.3,
+            baseUTCOffset: +2,
+            DSTDirection: +1,
+            getDSTStart: getESTStart,
+            getDSTEnd: getESTEnd
+        }, {
+            name: 'Asia/Bishkek',
+            zone: 'KGT',
+            zoneDST: 'KGT',
+            latitude: +42.54,
+            longitude: +74.36,
+            baseUTCOffset: +6,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Brunei',
+            zone: 'BNT',
+            zoneDST: 'BNT',
+            latitude: +4.56,
+            longitude: +114.55,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Chita',
+            zone: 'YAKT',
+            zoneDST: 'YAKT',
+            latitude: +52.03,
+            longitude: +113.28,
+            baseUTCOffset: +9,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Choibalsan',
+            zone: 'CHOT',
+            zoneDST: 'CHOST',
+            latitude: +48.04,
+            longitude: +114.3,
+            baseUTCOffset: +9,
+            DSTDirection: +1,
+            getDSTStart: getMongoliaDSTStart,
+            getDSTEnd: getMongoliaDSTEnd
+        }, {
+            name: 'Asia/Colombo',
+            zone: 'IST',
+            zoneDST: 'IST',
+            latitude: +6.56,
+            longitude: +79.51,
+            baseUTCOffset: +5.5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Damascus',
+            zone: 'EET',
+            zoneDST: 'EEST',
+            latitude: +33.3,
+            longitude: +36.18,
+            baseUTCOffset: +2,
+            DSTDirection: +1,
+            getDSTStart: getSyriaDSTStart,
+            getDSTEnd: getSyriaDSTEnd
+        }, {
+            name: 'Asia/Dhaka',
+            zone: 'BST',
+            zoneDST: 'BST',
+            latitude: +23.43,
+            longitude: +90.25,
+            baseUTCOffset: +6,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Dili',
+            zone: 'TLT',
+            zoneDST: 'TLT',
+            latitude: -8.33,
+            longitude: +125.35,
+            baseUTCOffset: +9,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Dubai',
+            zone: 'GST',
+            zoneDST: 'GSR',
+            latitude: +25.18,
+            longitude: +55.18,
+            baseUTCOffset: +4,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Dushanbe',
+            zone: 'TJT',
+            zoneDST: 'TJT',
+            latitude: +38.35,
+            longitude: +68.48,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Gaza',
+            zone: 'EET',
+            zoneDST: 'EEST',
+            latitude: +31.3,
+            longitude: +34.28,
+            baseUTCOffset: +2,
+            DSTDirection: +1,
+            getDSTStart: getPalestinianDSTStart,
+            getDSTEnd: getPalestinianDSTEnd
+        }, {
+            name: 'Asia/Hebron',
+            zone: 'EET',
+            zoneDST: 'EEST',
+            latitude: +31.32,
+            longitude: +35.0542,
+            baseUTCOffset: +2,
+            DSTDirection: +1,
+            getDSTStart: getPalestinianDSTStart,
+            getDSTEnd: getPalestinianDSTEnd
+        }, {
+            name: 'Asia/Ho_Chi_Minh',
+            zone: 'ICT',
+            zoneDST: 'ICT',
+            latitude: +10.45,
+            longitude: +106.4,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Hong_Kong',
+            zone: 'HKT',
+            zoneDST: 'HKT',
+            latitude: +22.17,
+            longitude: +114.09,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Hovd',
+            zone: 'HOVT',
+            zoneDST: 'HOVST',
+            latitude: +48.01,
+            longitude: +91.39,
+            baseUTCOffset: +7,
+            DSTDirection: +1,
+            getDSTStart: getMongoliaDSTStart,
+            getDSTEnd: getMongoliaDSTEnd
+        }, {
+            name: 'Asia/Irkutsk',
+            zone: 'IRKT',
+            zoneDST: 'IRKT',
+            latitude: +52.16,
+            longitude: +104.2,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Jakarta',
+            zone: 'WIB',
+            zoneDST: 'WIB',
+            latitude: -6.1,
+            longitude: +106.48,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Jayapura',
+            zone: 'WIT',
+            zoneDST: 'WIT',
+            latitude: -2.32,
+            longitude: +140.42,
+            baseUTCOffset: +9,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Jerusalem',
+            zone: 'IST',
+            zoneDST: 'IDT',
+            latitude: +31.465,
+            longitude: +35.1326,
+            baseUTCOffset: +2,
+            DSTDirection: +1,
+            getDSTStart: getIsraelDSTStart,
+            getDSTEnd: getIsraelDSTEnd
+        }, {
+            name: 'Asia/Kabul',
+            zone: 'AFT',
+            zoneDST: 'AFT',
+            latitude: +34.31,
+            longitude: +69.12,
+            baseUTCOffset: +4.5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Kamchatka',
+            zone: 'PETT',
+            zoneDST: 'PETT',
+            latitude: +53.01,
+            longitude: +158.39,
+            baseUTCOffset: +12,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Kolkata',
+            zone: 'IST',
+            zoneDST: 'IST',
+            latitude: +22.32,
+            longitude: +88.22,
+            baseUTCOffset: +5.5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Kuching',
+            zone: 'MYT',
+            zoneDST: 'MYT',
+            latitude: +1.33,
+            longitude: +110.2,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Kuwait',
+            zone: 'AST',
+            zoneDST: 'AST',
+            latitude: +29.2,
+            longitude: +47.59,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Macau',
+            zone: 'CST',
+            zoneDST: 'CST',
+            latitude: +22.14,
+            longitude: +113.35,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Magadan',
+            zone: 'MAGT',
+            zoneDST: 'MAGT',
+            latitude: +59.34,
+            longitude: +150.48,
+            baseUTCOffset: +11,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Makassar',
+            zone: 'WITA',
+            zoneDST: 'WITA',
+            latitude: -5.07,
+            longitude: +119.24,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Manila',
+            zone: 'PHT',
+            zoneDST: 'PHT',
+            latitude: +14.35,
+            longitude: +1.21,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Muscat',
+            zone: 'GST',
+            zoneDST: 'GST',
+            latitude: +23.36,
+            longitude: +58.35,
+            baseUTCOffset: +4,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Nicosia',
+            zone: 'EET',
+            zoneDST: 'EEST',
+            latitude: +35.1,
+            longitude: +33.22,
+            baseUTCOffset: +2,
+            DSTDirection: +1,
+            getDSTStart: getESTStart,
+            getDSTEnd: getESTEnd
+        }, {
+            name: 'Asia/Novokuznetsk',
+            zone: 'KRAT',
+            zoneDST: 'KRAT',
+            latitude: +53.45,
+            longitude: +87.07,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Novosibirsk',
+            zone: 'NOVT',
+            zoneDST: 'NOVT',
+            latitude: +55.02,
+            longitude: +82.55,
+            baseUTCOffset: +6,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Omsk',
+            zone: 'OMST',
+            zoneDST: 'OMST',
+            latitude: +55.0,
+            longitude: +73.24,
+            baseUTCOffset: +6,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Oral',
+            zone: 'ORAT',
+            zoneDST: 'ORAT',
+            latitude: +51.13,
+            longitude: +51.21,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Phnom_Penh',
+            zone: 'ICT',
+            zoneDST: 'ICT',
+            latitude: +11.33,
+            longitude: +104.55,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Pontianak',
+            zone: 'WIB',
+            zoneDST: 'WIB',
+            latitude: -2.0,
+            longitude: +109.2,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Pyongyang',
+            zone: 'PYT',
+            zoneDST: 'PYT',
+            latitude: +39.01,
+            longitude: +125.45,
+            baseUTCOffset: +8.5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Qatar',
+            zone: 'AST',
+            zoneDST: 'AST',
+            latitude: +25.17,
+            longitude: +51.32,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Qyzylorda',
+            zone: 'QYZT',
+            zoneDST: 'QYZT',
+            latitude: +44.48,
+            longitude: +65.28,
+            baseUTCOffset: +6,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Rangoon',
+            zone: 'MMT',
+            zoneDST: 'MMT',
+            latitude: +16.47,
+            longitude: +96.1,
+            baseUTCOffset: +6.5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Riyadh',
+            zone: 'AST',
+            zoneDST: 'AST',
+            latitude: +24.38,
+            longitude: +46.43,
+            baseUTCOffset: +3,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Sakhalin',
+            zone: 'SAKT',
+            zoneDST: 'SAKT',
+            latitude: +46.58,
+            longitude: +142.42,
+            baseUTCOffset: +11,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Samarkand',
+            zone: 'UZT',
+            zoneDST: 'UZT',
+            latitude: +39.4,
+            longitude: +66.48,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Seoul',
+            zone: 'KST',
+            zoneDST: 'KST',
+            latitude: +37.33,
+            longitude: +126.58,
+            baseUTCOffset: +9,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Shanghai',
+            zone: 'CST',
+            zoneDST: 'CST',
+            latitude: +31.14,
+            longitude: +121.28,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Singapore',
+            zone: 'SGT',
+            zoneDST: 'SGT',
+            latitude: +1.17,
+            longitude: +103.51,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Srednekolymsk',
+            zone: 'SRET',
+            zoneDST: 'SRET',
+            latitude: +67.28,
+            longitude: +153.43,
+            baseUTCOffset: +11,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Taipei',
+            zone: 'CST',
+            zoneDST: 'CST',
+            latitude: +25.03,
+            longitude: +121.3,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Tashkent',
+            zone: 'UZT',
+            zoneDST: 'UZT',
+            latitude: +41.2,
+            longitude: +69.18,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Tbilisi',
+            zone: 'GET',
+            zoneDST: 'GET',
+            latitude: +41.43,
+            longitude: +44.49,
+            baseUTCOffset: +4,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Tehran',
+            zone: 'IRST',
+            zoneDST: 'IRDT',
+            latitude: +35.4,
+            longitude: +51.26,
+            baseUTCOffset: +3.5,
+            DSTDirection: +1,
+            getDSTStart: getSolarHijriDSTStart,
+            getDSTEnd: getSolarHijriDSTEnd
+        }, {
+            name: 'Asia/Thimphu',
+            zone: 'BTT',
+            zoneDST: 'BTT',
+            latitude: +27.28,
+            longitude: +89.39,
+            baseUTCOffset: +6,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Tokyo',
+            zone: '',
+            zoneDST: '',
+            latitude: +353916,
+            longitude: +1394441,
+            baseUTCOffset: +0,
+            DSTDirection: +1,
+            getDSTStart: null,
+            getDSTEnd: null
+        }, {
+            name: 'Asia/Tomsk',
+            zone: 'JST',
+            zoneDST: 'JST',
+            latitude: +56.3,
+            longitude: +84.58,
+            baseUTCOffset: +9,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Ulaanbaatar',
+            zone: 'ULAT',
+            zoneDST: 'ULAST',
+            latitude: +47.55,
+            longitude: +106.53,
+            baseUTCOffset: +8,
+            DSTDirection: +1,
+            getDSTStart: getMongoliaDSTStart,
+            getDSTEnd: getMongoliaDSTEnd
+        }, {
+            name: 'Asia/Urumqi',
+            zone: 'CST',
+            zoneDST: 'CST',
+            latitude: +43.48,
+            longitude: +87.35,
+            baseUTCOffset: +8,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Ust-Nera',
+            zone: 'VLAT',
+            zoneDST: 'VLAT',
+            latitude: +64.3337,
+            longitude: +143.1336,
+            baseUTCOffset: +10,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Vientiane',
+            zone: 'ICT',
+            zoneDST: 'ICT',
+            latitude: +17.58,
+            longitude: +102.36,
+            baseUTCOffset: +7,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Vladivostok',
+            zone: 'VLAT',
+            zoneDST: 'VLAT',
+            latitude: +43.1,
+            longitude: +131.56,
+            baseUTCOffset: +10,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Yakutsk',
+            zone: 'YAKT',
+            zoneDST: 'YAKT',
+            latitude: +62.0,
+            longitude: +129.4,
+            baseUTCOffset: +9,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Yekaterinburg',
+            zone: 'YEKT',
+            zoneDST: 'YEKT',
+            latitude: +56.51,
+            longitude: +60.36,
+            baseUTCOffset: +5,
+            DSTDirection: +0
+        }, {
+            name: 'Asia/Yerevan',
+            zone: 'AMT',
+            zoneDST: 'AMT',
+            latitude: +40.11,
+            longitude: +44.3,
+            baseUTCOffset: +4,
+            DSTDirection: +0
+        }, {
             name: 'Europe/Amsterdam',
             zone: 'CET',
             zoneDST: 'CEST',
@@ -2560,6 +3184,88 @@ function TimezoneManager() {
             return new Date(Date.UTC(year, 10, 7, 1, 0, 0, 0));
         }
         return cest;
+    }
+
+    function getJordanDSTStart(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 2, findLastOfMonth(year, 2, 5), 0, 0, 0, 0), this.baseUTCOffset);
+    }
+
+    function getJordanDSTEnd(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 9, findLastOfMonth(year, 9, 5), 1, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getMongoliaDSTStart(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 2, findLastOfMonth(year, 2, 6), 2, 0, 0, 0), this.baseUTCOffset);
+    }
+
+    function getMongoliaDSTEnd(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 8, findLastOfMonth(year, 8, 6), 0, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getSyriaDSTStart(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 2, findLastOfMonth(year, 2, 5), 0, 0, 0, 0), this.baseUTCOffset);
+    }
+
+    function getSyriaDSTEnd(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 9, findLastOfMonth(year, 9, 5), 0, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getPalestinianDSTStart(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 2, findLastOfMonth(year, 2, 6), 1, 0, 0, 0), this.baseUTCOffset);
+    }
+
+    function getPalestinianDSTEnd(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 9, findLastOfMonth(year, 9, 5), 0, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getIsraelDSTStart(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 2, findLastOfMonth(year, 2, 0) - 2, 2, 0, 0, 0), this.baseUTCOffset);
+    }
+
+    function getIsraelDSTEnd(year) {
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, 9, findLastOfMonth(year, 9, 0), 2, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getSolarHijriDSTStart(year) {
+        var hijriDate = getGregorianFromSolarHijriDate(year - 621, 1, 1);
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, hijriDate.getMonth(), hijriDate.getDate(), 0, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getSolarHijriDSTEnd(year) {
+        var hijriDate = getGregorianFromSolarHijriDate(year - 621, 6, 30);
+        //noinspection JSUnresolvedVariable
+        return convertDateToMatchTimezone(new Date(year, hijriDate.getMonth(), hijriDate.getDate(), 0, 0, 0, 0), this.baseUTCOffset + this.DSTDirection);
+    }
+
+    function getGregorianFromSolarHijriDate(year, month, day) {
+        var hijriYear = year % 128;
+        if (hijriYear >= 29) {
+            hijriYear -= 29;
+        }
+        while (hijriYear >= 33) {
+            hijriYear -= 33;
+        }
+        var beginOfYear = new Date(year + (month < 11 ? 621 : 622), 2, hijriYear % 4 == 0 ? 21 : 22);
+        var currentMonth = 1;
+        while (currentMonth++ < month) {
+            if (currentMonth < 7) {
+                day += 31;
+            } else if (currentMonth < 12) {
+                day += 30;
+            }
+        }
+        return new Date(beginOfYear.getTime() + ((day - 1) * 86400000));
     }
 
     function getIslamicFromGregorianDate(year, month, day) {
