@@ -198,7 +198,7 @@ function TimezoneManager() {
             name: 'Africa/Harare',
             zone: 'CAT',
             zoneDST: 'CAT',
-            latitude: -17.50,
+            latitude: -17.5,
             longitude: +31.03,
             baseUTCOffset: +2,
             DSTDirection: +0
@@ -2378,14 +2378,12 @@ function TimezoneManager() {
             DSTDirection: +0
         }, {
             name: 'Asia/Tokyo',
-            zone: '',
-            zoneDST: '',
-            latitude: +353916,
-            longitude: +1394441,
-            baseUTCOffset: +0,
-            DSTDirection: +1,
-            getDSTStart: null,
-            getDSTEnd: null
+            zone: 'JST',
+            zoneDST: 'JST',
+            latitude: +35.3916,
+            longitude: +139.4441,
+            baseUTCOffset: +9,
+            DSTDirection: +0
         }, {
             name: 'Asia/Tomsk',
             zone: 'JST',

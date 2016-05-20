@@ -469,7 +469,7 @@ function DateFormatter() {
             default:
                 return formatCharacter;
         }
-    }
+    };
 
     DateFormatter.prototype.format = function(format, timestamp) {
         this.setDate(timestamp);
